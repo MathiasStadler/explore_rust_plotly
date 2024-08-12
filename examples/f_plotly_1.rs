@@ -78,7 +78,8 @@ fn time_series_with_range_slider() {
         .title("Manually Set Date Range");
     plot.set_layout(layout);
 
-    plot.show();
+    //plot.show();
+    plot.write_html("out1.html");
 }
 
 fn time_series_with_range_selector_buttons() {
@@ -120,7 +121,8 @@ fn time_series_with_range_selector_buttons() {
     );
     plot.set_layout(layout);
 
-    plot.show();
+    // plot.show();
+    plot.write_html("out2.html");
 }
 
 fn customizing_tick_label_formatting_by_zoom_level() {
@@ -159,7 +161,8 @@ fn customizing_tick_label_formatting_by_zoom_level() {
     );
     plot.set_layout(layout);
 
-    plot.show();
+    //plot.show();
+    plot.write_html("out3.html");
 }
 
 // Candlestick Charts
@@ -226,7 +229,8 @@ fn simple_candlestick_chart() {
     let mut plot = Plot::new();
     plot.add_trace(trace1);
 
-    plot.show();
+    // plot.show();
+    plot.write_html("out4.html");
 }
 
 // OHLC Charts
@@ -293,7 +297,8 @@ fn simple_ohlc_chart() {
     let mut plot = Plot::new();
     plot.add_trace(trace1);
 
-    plot.show();
+    // plot.show();
+    plot.write_html("out5.html");
 }
 
 fn main() {
@@ -301,13 +306,13 @@ fn main() {
 
     // Time Series and Date Axes
     time_series_plot_with_custom_date_range();
-    // time_series_with_range_slider();
-    // time_series_with_range_selector_buttons();
-    // customizing_tick_label_formatting_by_zoom_level();
+    time_series_with_range_slider();
+    time_series_with_range_selector_buttons();
+    customizing_tick_label_formatting_by_zoom_level();
 
     // Candlestick Charts
-    // simple_candlestick_chart();
+    simple_candlestick_chart();
 
     // OHLC Charts
-    // simple_ohlc_chart();
+    simple_ohlc_chart();
 }
