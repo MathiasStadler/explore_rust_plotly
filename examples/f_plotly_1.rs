@@ -59,7 +59,8 @@ fn time_series_plot_with_custom_date_range() {
         .title("Manually Set Date Range");
     plot.set_layout(layout);
 
-    plot.show();
+    // plot.show();
+    plot.write_html("out.html");
 }
 
 fn time_series_with_range_slider() {
