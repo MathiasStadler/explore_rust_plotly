@@ -28,3 +28,18 @@ cd \
 && touch FROM_HERE.md \ 
 && cargo build 
 ```
+
+## add crate for this project
+
+-  https://github.com/plotly/plotly.rs/blob/main/plotly/Cargo.toml
+
+```bash
+cargo add plotly
+
+
+
+cargo add plotly_kaleido
+This is an internal crate which implements the kaleido feature for Plotly.rs.
+The kaleido feature enables Plot conversion to the following output formats: png, jpeg, webp, svg, pdf and eps.
+See examples/ for usage demonstrations.
+```
