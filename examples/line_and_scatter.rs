@@ -25,7 +25,7 @@ fn line_and_scatter_plot() {
     let layout = Layout::new().title("<b>Line and Scatter Plot</b>");
     plot.set_layout(layout);
 
-    if false {
+    if true {
         // We don't actually want to try and display the plot in a browser when running a doctest.
         plot.show();
     }
