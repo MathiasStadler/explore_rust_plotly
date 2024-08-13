@@ -17,17 +17,22 @@ struct FinData {
     low: f64,
     close: f64,
     volume: f64,
-    adjusted: f64,
-    dn: f64,
-    mavg: f64,
-    up: f64,
-    direction: String,
+    // adjusted: f64,
+    // dn: f64,
+    // mavg: f64,
+    // up: f64,
+    // direction: String,
 }
 
 fn load_apple_data() -> Vec<FinData> {
-    let mut p = PathBuf::from("./assets/");
+    // let mut p = PathBuf::from("./assets/");
+    ///home/user/workspace_rust/explore_rust_plotly/examples/assets
+    let mut p = PathBuf::from("./assets");
 
-    p = p.join("finance_charts_apple.csv");
+    // p = p.join("finance_charts_apple.csv");
+    // examples/assets/output_sma_7.csv
+    p = p.join("output_sma_7.csv");
+
     println!("Path => {}", p.display());
     // let mut p = PathBuf::from("./assets").unwrap();
     let mut rdr = csv::Reader::from_path(p).unwrap();
@@ -56,11 +61,11 @@ fn time_series_with_range_slider() {
     plot.set_layout(layout);
 
     //plot.show();
-    plot.write_html("out1.html");
+    plot.write_html("out_ohcl.html");
 }
 
-fn main() {
+fn main() {time_series_with_range_slider() 
     time_series_with_range_slider();
 }
 
-// cargo run --example f_plotly_3
+// cargo run --example f_plotly_4
