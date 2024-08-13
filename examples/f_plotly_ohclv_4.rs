@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 
+// target two charts
+
 // use std::env;
 use std::path::PathBuf;
 
@@ -78,26 +80,26 @@ fn time_series_with_range_slider() {
     let mut plot = Plot::new();
     plot.add_trace(trace);
 
-    let _plot_sma7 = Plot::new();
-    plot.add_trace(trace_sma7);
+    let mut plot_sma7 = Plot::new();
+    plot_sma7.add_trace(trace_sma7);
 
-    let _plot_sma10 = Plot::new();
-    plot.add_trace(trace_sma10);
+    // let _plot_sma10 = Plot::new();
+    // plot.add_trace(trace_sma10);
 
     let layout = Layout::new()
-        .x_axis(Axis::new().range_slider(RangeSlider::new().visible(false)))
+        .x_axis(Axis::new().range_slider(RangeSlider::new().visible(true)))
         .title("TREX Manually Set Date Range");
     plot.set_layout(layout);
 
     let layout_sma7 = Layout::new()
-        .x_axis(Axis::new().range_slider(RangeSlider::new().visible(true)))
-        .title("sma7");
-    plot.set_layout(layout_sma7);
+         .x_axis(Axis::new().range_slider(RangeSlider::new().visible(true)))
+         .title("sma7");
+    plot_sma7.set_layout(layout_sma7);
 
-    let layout_sma10 = Layout::new()
-        .x_axis(Axis::new().range_slider(RangeSlider::new().visible(true)))
-        .title("sma10");
-    plot.set_layout(layout_sma10);
+    // let layout_sma10 = Layout::new()
+    //     .x_axis(Axis::new().range_slider(RangeSlider::new().visible(true)))
+    //     .title("sma10");
+    // plot.set_layout(layout_sma10);
 
 
 
